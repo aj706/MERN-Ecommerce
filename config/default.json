@@ -1,0 +1,5 @@
+{
+    "jwtsecret": "mysecretkey", 
+    "dbURI": "mongodb://localhost:27017/Ecom",
+    "StripeAPIKey":"sk_test_51Kp78WSFIxrpBMdxGZ2EdTsKYlz4vAC2SWjY2nrq1hrsFppsm7eS4kmwScUkOab4QQy1VfGHygMi1cyPoyBEHRPe00UYBQghxt"
+}

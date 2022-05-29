@@ -1,0 +1,11 @@
+.text {
+  display: block;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT2sjcZIxtpAIiZ9VVQscctBDm7GI5CWiN3hmsm_Ju5JDfUIzt4_FAC8DjQX4Q4cJdSVg&usqp=CAU);
+  text-align: center;
+}
