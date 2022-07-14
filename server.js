@@ -26,17 +26,13 @@ if (process.env.NODE_ENV === "production") {
 
 const dbURI = process.env.dbURI || config.get("dbURI");
 const port = process.env.PORT || 4000;
+
 mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then(() =>
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(Ecom, "client", "build", "index.html"));
-    })
-  )
   .then(() =>
     app.listen(port, () =>
       console.log(`Server running on http://localhost:${port}`)
