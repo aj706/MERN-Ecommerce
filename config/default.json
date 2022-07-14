@@ -1,5 +1,6 @@
 {
     "jwtsecret": "mysecretkey", 
     "dbURI": "mongodb+srv://bluebeast007:ucc@Aj0706@ecom.y40no.mongodb.net/Ecom",
-    "StripeAPIKey":"sk_test_51Kp78WSFIxrpBMdxGZ2EdTsKYlz4vAC2SWjY2nrq1hrsFppsm7eS4kmwScUkOab4QQy1VfGHygMi1cyPoyBEHRPe00UYBQghxt"
+    "StripeAPIKey":"sk_test_51Kp78WSFIxrpBMdxGZ2EdTsKYlz4vAC2SWjY2nrq1hrsFppsm7eS4kmwScUkOab4QQy1VfGHygMi1cyPoyBEHRPe00UYBQghxt",
+    "NODE_ENV" : "PRODUCTION"
 }
