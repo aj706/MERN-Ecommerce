@@ -7,9 +7,10 @@ const authRoutes = require("./routes/auth");
 const itemRoutes = require("./routes/item");
 const cartRoutes = require("./routes/cart");
 const orderRoutes = require("./routes/order");
-
+const dotenv = require("dotenv").config();
 const app = express();
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.use("/api", authRoutes);
 app.use("/api", itemRoutes);
@@ -19,11 +20,11 @@ app.use("/api", orderRoutes);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.resolve(Ecom, "client", "build", "index.html"));
   });
 }
 
-const dbURI = config.get("dbURI");
+const dbURI = process.env.dbURI || config.get("dbURI");
 const port = process.env.PORT || 4000;
 mongoose
   .connect(dbURI, {
@@ -31,6 +32,11 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
+  .then(() =>
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(Ecom, "client", "build", "index.html"));
+    })
+  )
   .then(() =>
     app.listen(port, () =>
       console.log(`Server running on http://localhost:${port}`)
