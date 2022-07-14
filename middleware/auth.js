@@ -11,8 +11,7 @@ function auth(req, res, next) {
 
   try {
     // Verify token
-    const secret = process.env.SECRET || "jwtsecret";
-    const decoded = jwt.verify(token, config.get(secret));
+    const decoded = jwt.verify(token, config.get("jwtsecret"));
     //Add user from payload
     req.user = decoded;
     next();
